@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Cinemil\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
