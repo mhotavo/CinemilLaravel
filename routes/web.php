@@ -11,16 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontController@index');
+Route::get('reviews', 'FrontController@reviews');
 
-Route::get('prueba', function () {
-    return 'Hello World';
-});
 
-Route::get('nombre/{nombre}', function ($nombre) {
-    return 'Nombre '.$nombre;
-});
-
-Route::get('pelicula', 'PeliculaController@index');
+//Route::resource('movie', 'MovieController');
