@@ -19,6 +19,7 @@ Route::get('single', 'FrontController@single');
 Route::get('contact', 'FrontController@contact');
 Route::get('genres', 'FrontController@genres');
 Route::get('short-codes', 'FrontController@shortcodes');
+Route::get('admix', 'FrontController@admin');
 
 
 

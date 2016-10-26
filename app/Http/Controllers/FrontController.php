@@ -50,4 +50,10 @@ class FrontController extends Controller
 	{
 		return view('short-codes');
 	}
+
+
+	public function admin()
+	{
+		return view('admin.index');
+	}
 }
