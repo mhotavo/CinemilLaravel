@@ -12,7 +12,14 @@
 */
 
 Route::get('/', 'FrontController@index');
-Route::get('reviews', 'FrontController@reviews');
+Route::get('series', 'FrontController@series');
+Route::get('list', 'FrontController@list');
+Route::get('news', 'FrontController@news');
+Route::get('single', 'FrontController@single');
+Route::get('contact', 'FrontController@contact');
+Route::get('genres', 'FrontController@genres');
+Route::get('short-codes', 'FrontController@shortcodes');
+
 
 
 //Route::resource('movie', 'MovieController');

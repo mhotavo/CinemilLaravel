@@ -15,10 +15,39 @@ class FrontController extends Controller
 		return view('index');
 	}
 
-	public function reviews()
+	public function series()
 	{
-		return view('reviews');
+		return view('series');
+	}
+
+	public function list()
+	{
+		return view('list');
+	}
+
+	public function news()
+	{
+		return view('news');
+	}
+
+	public function single()
+	{
+		return view('single');
+	}
+
+	public function contact()
+	{
+		return view('contact');
 	}
 
 
+	public function genres()
+	{
+		return view('genres');
+	}
+
+	public function shortcodes()
+	{
+		return view('short-codes');
+	}
 }
