@@ -10,5 +10,5 @@ class Country extends Model
 
     protected $table="pais";
 
-    protected $fillable=['ID_PAIS', 'NOM_PAIS'];
+    protected $fillable=['id_pais', 'nom_pais'];
 }

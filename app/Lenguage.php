@@ -9,5 +9,5 @@ class Lenguage extends Model
     //
 	protected $table="idioma";
 
-	protected $fillable=['ID_IDIOMA', 'NOM_IDIOMA'];
+	protected $fillable=['id_idioma', 'nom_idioma'];
 }

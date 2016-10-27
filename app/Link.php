@@ -9,5 +9,5 @@ class Link extends Model
     //
 	protected $table="enlace";
 
-	protected $fillable=['ID_ENLACE', 'TIPO_ENLACE', 'ID_PELICULA', 'ID_SERVIDOR', 'ID_FUENTE', 'ENLACE'];
+	protected $fillable=['id_enlace', 'tipo_enlace', 'id_pelicula', 'id_servidor', 'id_fuente', 'enlace'];
 }

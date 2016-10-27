@@ -9,5 +9,5 @@ class Quality extends Model
     //
 	protected $table="calidad";
 
-	protected $fillable=['ID_CALIDAD', 'NOM_CALIDAD'];
+	protected $fillable=['id_calidad', 'nom_calidad'];
 }

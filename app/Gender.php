@@ -9,5 +9,5 @@ class Gender extends Model
     //
 	protected $table="genero";
 
-	protected $fillable=['ID_GENERO', 'NOM_GENERO'];
+	protected $fillable=['id_genero', 'nom_genero'];
 }

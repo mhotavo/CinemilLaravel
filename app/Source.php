@@ -9,5 +9,5 @@ class Source extends Model
     //
 	protected $table="fuente";
 
-	protected $fillable=['ID_FUENTE', 'NOM_FUENTE'];
+	protected $fillable=['id_fuente', 'nom_fuente'];
 }

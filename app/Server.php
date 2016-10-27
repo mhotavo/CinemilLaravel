@@ -10,5 +10,5 @@ class Server extends Model
 
 	protected $table="servidor";
 
-	protected $fillable=['ID_SERVIDOR', 'NOM_SERVIDOR'];
+	protected $fillable=['id_servidor', 'nom_servidor'];
 }

@@ -9,5 +9,5 @@ class Producer extends Model
     //
 	protected $table="productora";
 
-	protected $fillable=['ID_PRODUCTORA', 'NOM_PRODUCTORA'];
+	protected $fillable=['id_productora', 'nom_productora'];
 }

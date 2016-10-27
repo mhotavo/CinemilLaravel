@@ -11,14 +11,14 @@ class Movie extends Model
     //
 	protected $table="pelicula";
 
-	protected $fillable=['ID', 'TITULO_OFICIAL', 'TITULO_LATINO', 'DIRECTOR', 'REPARTO', 'PRODUCTORA', 'SINOPSIS', 'GENERO', 'PAIS', 'DURACION', 'FECHA_ESTRENO', 'IDIOMA', 'SUBTITULOS', 'CALIDAD', 'PESO', 'RESOLUCION', 'TRAILER', 'PORTADA', 'CAPTURAS', 'CLASIFICACION', 'VALORACION', 'FECHA_INGRESO'];
+	protected $fillable =['id', 'titulo_oficial', 'titulo_latino', 'director', 'reparto', 'id_productora', 'sinopsis', 'id_genero', 'id_pais', 'duracion', 'fecha_estreno', 'idiomas', 'subitulos', 'id_calidad', 'peso', 'id_resolucion', 'trailer', 'portada', 'capturas', 'clasificacion', 'valoracion'];
 
 
 	public function sluggable()
 	{
 		return [
 		'slug' => [
-		'source' => 'TITULO_LATINO'
+		'source' => 'titulo_latino'
 		]
 		];
 	}
