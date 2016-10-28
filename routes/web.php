@@ -22,5 +22,13 @@ Route::get('short-codes', 'FrontController@shortcodes');
 Route::get('admix', 'FrontController@admin');
 
 
+Route::group(['prefix'=>'admix'], function(){
+
+	Route::resource('users', 'UsersController');
+
+});
+
+
+
 
 //Route::resource('movie', 'MovieController');
