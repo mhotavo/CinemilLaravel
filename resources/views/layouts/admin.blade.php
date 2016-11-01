@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>@yield('tittle', 'Default') | Penel de Administración </title>
+	<title>@yield('titlePage', 'Default') | Penel de Administración </title>
 	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href=" {{ asset('css/font-awesome.min.css') }} ">
 	<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
@@ -55,9 +55,19 @@
 	</nav>
 	<div class="container">
 		<div class="col-sm-2"></div>
-		<div class="col-sm-8">@yield('content')</div>
+		<div class="col-sm-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
+				</div>
+				<div class="panel-body">
+					@yield('content')
+				</div>
+			</div>
+
+		</div>
 		<div class="col-sm-2"></div>
-		
+
 	</div>
 
 

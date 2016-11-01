@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
-
+@section('titlePage', 'Crear Usuario')
+@section('titlePanel', 'Crear Usuario')
 @section('content')
-
 {!! Form::open(['route'=>'users.store', 'method'=>'POST']) !!}
 	<div class="form-group">
 		{!! Form::label('name', 'Nombre') !!}
