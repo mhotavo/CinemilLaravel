@@ -14,11 +14,11 @@
 	</div>
 	<div class="form-group">
 		{!! Form::label('password', 'Contraseña') !!}
-		{!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'********']) !!}
+		{!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'********'], 'required') !!}
 	</div>
 	<div class="form-group">
 		{!! Form::label('type', 'Tipo') !!}
-		{!! Form::select('type', ['member'=>'Miembro', 'admin' =>'Administrador'], null, ['class'=>'form-control']) !!}
+		{!! Form::select('type', ['member'=>'Miembro', 'admin' =>'Administrador'], null, ['class'=>'form-control', 'required']) !!}
 	</div>
 	<div class="form-group">
 		{!! Form::submit('Registrar', ['class'=>'btn btn-primary']) !!}

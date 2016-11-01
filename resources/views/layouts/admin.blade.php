@@ -31,7 +31,6 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav">
-
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Listar <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
@@ -39,6 +38,11 @@
 						</ul>
 					</li>
 				</ul>
+
+				<ul class="nav navbar-nav">
+				<li><a href="{{ route('users.index') }}">  Usuarios  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+				</ul>
+
 				<ul class="nav navbar-nav navbar-right">
 
 					<li class="dropdown">
@@ -58,7 +62,7 @@
 		<div class="col-sm-8">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-				<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
+					<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
 				</div>
 				<div class="panel-body">
 					@yield('content')

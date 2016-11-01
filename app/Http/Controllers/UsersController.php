@@ -15,7 +15,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        # Ordenar y Paginar el array
+        $users = User::orderBy('id', 'ASC')->paginate(10);
+        #Retornar array a la vista
+        return view('admin.users.index')->with('users',$users);
     }
 
     /**
