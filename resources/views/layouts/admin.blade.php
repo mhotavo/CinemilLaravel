@@ -40,7 +40,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav">
-				<li><a href="{{ route('users.index') }}">  Usuarios  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+					<li><a href="{{ route('users.index') }}">  Usuarios  <i class="fa fa-user" aria-hidden="true"></i></a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -65,6 +65,7 @@
 					<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
 				</div>
 				<div class="panel-body">
+					@include('flash::message')
 					@yield('content')
 				</div>
 			</div>

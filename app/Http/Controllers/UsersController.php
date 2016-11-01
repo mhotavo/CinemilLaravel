@@ -18,8 +18,8 @@ class UsersController extends Controller
         # Ordenar y Paginar el array
         $users = User::orderBy('id', 'ASC')->paginate(10);
         #Retornar array a la vista
-        return view('admin.users.index')->with('users',$users);
-    }
+            return view('admin.users.index')->with('users',$users);
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -41,10 +41,11 @@ class UsersController extends Controller
     {
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
-        $user->save();
-        dd("guardado");
+            $user->save();
+                flash('Usuario creado satisfactoriamente.', 'success');
+                    return redirect()->route('users.index');
 
-    }
+                }
 
     /**
      * Display the specified resource.
