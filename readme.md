@@ -84,6 +84,12 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 
 		$ git config --global user.email milton.otavo@gmail.com
 
+
++ Creamos Commit con todos los cambios
+
+		$ git add -A && git commit -m "Your Message"
+
+
 + Para asegurarnos de que no exista ningún cambio que nosotros no tengamos
 
 		$ git pull origin master
@@ -91,6 +97,7 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 + Subimos los cambios
 
 		$ git push origin master
+
 
 
 
