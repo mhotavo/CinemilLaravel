@@ -25,8 +25,13 @@ Route::get('admix', 'FrontController@admin');
 Route::group(['prefix'=>'admix'], function(){
 
 	Route::resource('users', 'UsersController');
+	Route::get('users/{id}/destroy',[
+		'uses' => 'UsersController@destroy',
+		'as' => 'users.destroy'
+	]);
 
 });
+
 
 
 

@@ -30,8 +30,8 @@
 					@endif
 				</td>
 				<td>
-					<a href="" class="btn btn-danger">Eliminar</a>
-					<a href="" class="btn btn-warning">Editar</a>
+					<a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+					<a href="" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 				</td>
 			</tr>
 			@endforeach
