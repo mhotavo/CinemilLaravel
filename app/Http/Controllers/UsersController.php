@@ -5,6 +5,7 @@ namespace Cinemil\Http\Controllers;
 use Illuminate\Http\Request;
 use Cinemil\Http\Requests;
 use Cinemil\User;
+use Cinemil\Http\Requests\UsersRequest;
 
 class UsersController extends Controller
 {
@@ -37,7 +38,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsersRequest $request)
     {
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
@@ -77,7 +78,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UsersRequest $request, $id)
     {
         $user = User::find($id);
         $user->name = $request->name;
@@ -85,7 +86,7 @@ class UsersController extends Controller
         $user->type = $request->type;
         #$user_new = new User($request->all());
         $user->save();
-        flash('El usuario' . $user->name . 'ha sido editado con exito!' , 'success' )->important();
+        flash('El usuario' . $user->name . ' ha sido editado con exito!' , 'success' )->important();
         return redirect()->route('users.index');
 
 
