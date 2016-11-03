@@ -21,7 +21,7 @@
 			<tr>
 				<td>{{ $user->id }}</td>
 				<td>{{ $user->name }}</td>
-				<td>{{ $user->mail }}</td>
+				<td>{{ $user->email }}</td>
 				<td>
 					@if ($user->type=="admin")
 						<span class="label label-danger">{{ $user->type }}</span>
@@ -30,8 +30,8 @@
 					@endif
 				</td>
 				<td>
+					<a href ="{{ route('users.edit', $user->id) }}" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 					<a href="{{ route('users.destroy', $user->id) }}" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-					<a href="" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 				</td>
 			</tr>
 			@endforeach
