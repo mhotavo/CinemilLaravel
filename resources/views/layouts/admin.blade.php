@@ -17,28 +17,27 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" style="font-size: 17px" href="Integrantes"><b>Cine</b>Mil</a>
+				<a class="navbar-brand" style="font-size: 17px" href="{{ url('/') }}"><b>Cine</b>Mil</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Agregar <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Parámetros <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="pelicula/create">Pelicula</a></li>
-							<li><a href="serie/create">Serie</a></li>
+							<li><a href="{{ route('qualities.index') }}">Calidades</a></li>
+							<li><a href="{{ route('sources.index') }}">Fuentes</a></li>
+							<li><a href="{{ route('genders.index') }}">Géneros</a></li>
+							<li><a href="{{ route('producers.index') }}">Productoras</a></li>
+							<li><a href="{{ route('servers.index') }}">Servidores</a></li>
+							<li><a href="{{ route('resolutions.index') }}">Resoluciones</a></li>
+							<li><a href="{{ route('lenguages.index') }}">Idiomas</a></li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Listar <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="pelicula/list">Peliculas</a></li>
-						</ul>
-					</li>
+					<li><a href="{{ route('users.index') }}">  Películas  <i class="fa fa-video-camera" aria-hidden="true"></i></a></li>
 				</ul>
-
 				<ul class="nav navbar-nav">
 					<li><a href="{{ route('users.index') }}">  Usuarios  <i class="fa fa-user" aria-hidden="true"></i></a></li>
 				</ul>
@@ -52,33 +51,43 @@
 						</ul>
 					</li>
 
-					<li><a href="Logout">  Salir  <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="col-sm-2"></div>
-		<div class="col-sm-8">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
-				</div>
-				<div class="panel-body">
-					@include('flash::message')
-					@yield('content')
-				</div>
-			</div>
+					<li>                 
+						<a href="{{ url('/logout') }}"
+						onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">
+						Logout
+					</a>
 
+					<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+						{{ csrf_field() }}
+					</form>
+				</li>
+			</ul>
 		</div>
-		<div class="col-sm-2"></div>
+	</div>
+</nav>
+<div class="container">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">@yield('titlePanel', 'Default')</h3>
+			</div>
+			<div class="panel-body">
+				@include('flash::message')
+				@yield('content')
+			</div>
+		</div>
 
 	</div>
+	<div class="col-sm-2"></div>
+
+</div>
 
 
 
 
 
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

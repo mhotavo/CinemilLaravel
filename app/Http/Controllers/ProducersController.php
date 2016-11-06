@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Cinemil\Http\Requests;
 
-class MoviesController extends Controller
+class ProducersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        return "estoy en el index";
+        //
     }
 
     /**
@@ -25,7 +25,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        return "estoy en el create";
+        //
     }
 
     /**

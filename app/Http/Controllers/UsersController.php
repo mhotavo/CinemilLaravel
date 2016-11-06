@@ -9,6 +9,12 @@ use Cinemil\Http\Requests\UsersRequest;
 
 class UsersController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +25,8 @@ class UsersController extends Controller
         # Ordenar y Paginar el array
         $users = User::orderBy('id', 'ASC')->paginate(10);
         #Retornar array a la vista
-            return view('admin.users.index')->with('users',$users);
-        }
+        return view('admin.users.index')->with('users',$users);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -42,11 +48,11 @@ class UsersController extends Controller
     {
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
-            $user->save();
-                flash('Usuario creado satisfactoriamente.', 'success')->important();
-                    return redirect()->route('users.index');
+        $user->save();
+        flash('Usuario creado satisfactoriamente.', 'success')->important();
+        return redirect()->route('users.index');
 
-                }
+    }
 
     /**
      * Display the specified resource.
@@ -100,11 +106,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-       $user = User::find($id);
-       $user->delete();
-        flash('El usuario' . $user->name . ' ha sido eliminado. ', 'danger')->important();
-                    return redirect()->route('users.index');
+     $user = User::find($id);
+     $user->delete();
+     flash('El usuario' . $user->name . ' ha sido eliminado. ', 'danger')->important();
+     return redirect()->route('users.index');
 
 
-    }
+ }
 }
