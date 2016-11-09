@@ -2,7 +2,11 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 
 #Cinema
 
-## Instalación
+## INSTALAR PROYECTO
+
++ crear o ingresar en la carpeta q queremos clonar el repositorio
+
+		$ git clone https://github.com/mhotavo/CinemilLaravel.git
 
 + Después de descargar el proyecto entramos a este.
 
@@ -23,24 +27,12 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 
         $ php artisan serve
 
+       
 
-# Github
-  
-+ instalar git
 
-		$ sudo apt-get install git-core
 
-+ crear o ingresar en la carpeta q queremos clonar el repositorio
+## RELIZAR BACKUP PROYECTO
 
-		$ git clone https://github.com/mhotavo/CinemilLaravel.git
-
-+ instalar git gui
-
-		$ sudo apt-get install gitk giggle git-cola git-gui gitg
-
-+ abrir el gui de git mediante el comando, para eso tenemos q estar en la carpeta donde clonamos el git
-
-		$ git gui
 
 + poner el nombre del usuario en git
 
@@ -50,6 +42,12 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 
 		$ git config --global user.email milton.otavo@gmail.com
 
+
++ Creamos Commit con todos los cambios
+
+		$ git add -A && git commit -m "Your Message"
+
+
 + para asegurarnos de que no exista ningún cambio que nosotros no tengamos
 
 		$ git pull origin master
@@ -58,52 +56,9 @@ Curso de Laravel 5.1 donde aprenderemos a crear una aplicación web dinámica :D
 
 		$ git push origin master
 
++ Exportar BD
 
-
-#instalar git
-
-		$ sudo apt-get install git-core
-
-+ Crear o ingresar en la carpeta q queremos clonar el repositorio
-
-		$ git clone https://github.com/mhotavo/Asoft.git
-
-+ Instalar git gui
-
-		$ sudo apt-get install gitk giggle git-cola git-gui gitg
-
-+ Abrir el gui de git mediante el comando, para eso tenemos q estar en la carpeta donde clonamos el git
-
-		$ git gui
-
-+ poner el nombre del usuario en git
-
-		$ git config --global user.name mhotavo
-
-+ Colocar email del usuario
-
-		$ git config --global user.email milton.otavo@gmail.com
-
-
-+ Creamos Commit con todos los cambios
-
-		$ git add -A && git commit -m "Your Message"
-
-
-+ Para asegurarnos de que no exista ningún cambio que nosotros no tengamos
-
-		$ git pull origin master
-
-+ Subimos los cambios
-
-		$ git push origin master
-
-
-
-
-
-
-
+		$  mysqldump -h localhost -u root -p cinemil > Cinemil.sql
 
 
 # .env
