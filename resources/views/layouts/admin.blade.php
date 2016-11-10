@@ -25,12 +25,10 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Parámetros <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="{{ route('qualities.index') }}">Calidades</a></li>
 							<li><a href="{{ route('sources.index') }}">Fuentes</a></li>
 							<li><a href="{{ route('genders.index') }}">Géneros</a></li>
 							<li><a href="{{ route('producers.index') }}">Productoras</a></li>
 							<li><a href="{{ route('servers.index') }}">Servidores</a></li>
-							<li><a href="{{ route('resolutions.index') }}">Resoluciones</a></li>
 							<li><a href="{{ route('lenguages.index') }}">Idiomas</a></li>
 						</ul>
 					</li>

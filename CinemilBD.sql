@@ -16,31 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `calidad`
---
-
-DROP TABLE IF EXISTS `calidad`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `calidad` (
-  `id_calidad` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nom_calidad` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_calidad`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `calidad`
---
-
-LOCK TABLES `calidad` WRITE;
-/*!40000 ALTER TABLE `calidad` DISABLE KEYS */;
-/*!40000 ALTER TABLE `calidad` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `enlace`
 --
 
@@ -48,19 +23,18 @@ DROP TABLE IF EXISTS `enlace`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `enlace` (
-  `id_enlace` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `tipo_enlace` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_pelicula` int(10) unsigned NOT NULL,
   `id_servidor` int(10) unsigned NOT NULL,
-  `id_fuente` int(10) unsigned NOT NULL,
+  `id_fuente` int(11) DEFAULT NULL,
   `enlace` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_enlace`),
+  PRIMARY KEY (`id`),
   KEY `enlace_id_pelicula_foreign` (`id_pelicula`),
   KEY `enlace_id_servidor_foreign` (`id_servidor`),
   KEY `enlace_id_fuente_foreign` (`id_fuente`),
-  CONSTRAINT `enlace_id_fuente_foreign` FOREIGN KEY (`id_fuente`) REFERENCES `fuente` (`id_fuente`),
   CONSTRAINT `enlace_id_pelicula_foreign` FOREIGN KEY (`id_pelicula`) REFERENCES `pelicula` (`id_pelicula`),
   CONSTRAINT `enlace_id_servidor_foreign` FOREIGN KEY (`id_servidor`) REFERENCES `servidor` (`id_servidor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -83,11 +57,11 @@ DROP TABLE IF EXISTS `fuente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fuente` (
-  `id_fuente` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `nom_fuente` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_fuente`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -97,6 +71,7 @@ CREATE TABLE `fuente` (
 
 LOCK TABLES `fuente` WRITE;
 /*!40000 ALTER TABLE `fuente` DISABLE KEYS */;
+INSERT INTO `fuente` VALUES (2,'Repelis.tv','2016-11-09 16:32:33','2016-11-09 16:32:33');
 /*!40000 ALTER TABLE `fuente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,13 +237,7 @@ CREATE TABLE `pelicula` (
   KEY `pelicula_id_idioma_foreign` (`id_idioma`),
   KEY `pelicula_id_genero_foreign` (`id_genero`),
   KEY `pelicula_id_pais_foreign` (`id_pais`),
-  KEY `pelicula_id_resolucion_foreign` (`id_resolucion`),
-  CONSTRAINT `pelicula_id_calidad_foreign` FOREIGN KEY (`id_calidad`) REFERENCES `calidad` (`id_calidad`),
-  CONSTRAINT `pelicula_id_genero_foreign` FOREIGN KEY (`id_genero`) REFERENCES `genero` (`id_genero`),
-  CONSTRAINT `pelicula_id_idioma_foreign` FOREIGN KEY (`id_idioma`) REFERENCES `idioma` (`id_idioma`),
-  CONSTRAINT `pelicula_id_pais_foreign` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id_pais`),
-  CONSTRAINT `pelicula_id_productora_foreign` FOREIGN KEY (`id_productora`) REFERENCES `productora` (`id_productora`),
-  CONSTRAINT `pelicula_id_resolucion_foreign` FOREIGN KEY (`id_resolucion`) REFERENCES `resolucion` (`id_resolucion`)
+  KEY `pelicula_id_resolucion_foreign` (`id_resolucion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -304,31 +273,6 @@ CREATE TABLE `productora` (
 LOCK TABLES `productora` WRITE;
 /*!40000 ALTER TABLE `productora` DISABLE KEYS */;
 /*!40000 ALTER TABLE `productora` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `resolucion`
---
-
-DROP TABLE IF EXISTS `resolucion`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `resolucion` (
-  `id_resolucion` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nom_resolucion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_resolucion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `resolucion`
---
-
-LOCK TABLES `resolucion` WRITE;
-/*!40000 ALTER TABLE `resolucion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `resolucion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -396,4 +340,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-09  9:47:35
+-- Dump completed on 2016-11-10 14:05:19

@@ -34,12 +34,6 @@ Route::group(['prefix'=>'admix'], function(){
 		'uses' => 'UsersController@destroy',
 		'as' => 'users.destroy'
 		]);
-	#Qualities
-	Route::resource('qualities', 'QualitiesController');
-	Route::get('qualities/{id}/destroy',[
-		'uses' => 'qualitiesController@destroy',
-		'as' => 'qualities.destroy'
-		]);
 	#Sources
 	Route::resource('sources', 'SourcesController');
 	Route::get('sources/{id}/destroy',[
@@ -49,31 +43,25 @@ Route::group(['prefix'=>'admix'], function(){
 	#Genders
 	Route::resource('genders', 'GendersController');
 	Route::get('genders/{id}/destroy',[
-		'uses' => 'gendersController@destroy',
+		'uses' => 'GendersController@destroy',
 		'as' => 'genders.destroy'
 		]);
 	#Producers
 	Route::resource('producers', 'ProducersController');
 	Route::get('producers/{id}/destroy',[
-		'uses' => 'producersController@destroy',
+		'uses' => 'ProducersController@destroy',
 		'as' => 'producers.destroy'
 		]);
 	#Servers
 	Route::resource('servers', 'ServersController');
 	Route::get('servers/{id}/destroy',[
-		'uses' => 'serversController@destroy',
+		'uses' => 'ServersController@destroy',
 		'as' => 'servers.destroy'
-		]);
-	#Resolutions
-	Route::resource('resolutions', 'ResolutionsController');
-	Route::get('resolutions/{id}/destroy',[
-		'uses' => 'resolutionsController@destroy',
-		'as' => 'resolutions.destroy'
 		]);
 	#Lenguajes
 	Route::resource('lenguages', 'LenguagesController');
 	Route::get('lenguages/{id}/destroy',[
-		'uses' => 'lenguagesController@destroy',
+		'uses' => 'LenguagesController@destroy',
 		'as' => 'lenguages.destroy'
 		]);
 
