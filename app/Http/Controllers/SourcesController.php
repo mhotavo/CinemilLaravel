@@ -22,7 +22,7 @@ class SourcesController extends Controller
      */
     public function index()
     {
-        $sources=Source::OrderBy('id_fuente', 'ASC')->paginate(10);
+        $sources=Source::OrderBy('id', 'ASC')->paginate(10);
         return view('admin.sources.index')->with('sources', $sources);
     }
 
@@ -70,8 +70,8 @@ class SourcesController extends Controller
     public function edit($id)
     {
         $source=Source::find($id);
-       return view('admin.sources.edit')->with('source', $source);
-   }
+        return view('admin.sources.edit')->with('source', $source);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -82,7 +82,12 @@ class SourcesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $source = Source::find($id);
+        $source->fill($request->all());
+        $source->save();
+
+        flash('La fuente ' . $source->nom_fuente . ' ha sido editada con exito!' , 'success' )->important();
+        return redirect()->route('sources.index');
     }
 
     /**
