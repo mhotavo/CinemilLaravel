@@ -18,7 +18,7 @@
 {!! Form::open(['route'=>['sources.update', $source->id], 'method'=>'PUT']) !!}
 <div class="form-group">
 	{!! Form::label('name', 'Nombre') !!}
-	{!! Form::text('name', $source->name, ['class'=>'form-control', 'placeholder'=>'Nombre', 'required']) !!}
+	{!! Form::text('name', $source->nom_fuente, ['class'=>'form-control', 'placeholder'=>'Nombre', 'required']) !!}
 </div>
 <div class="form-group">
 	{!! Form::submit('Editar', ['class'=>'btn btn-primary']) !!}

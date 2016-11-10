@@ -43,7 +43,7 @@ Route::group(['prefix'=>'admix'], function(){
 	#Sources
 	Route::resource('sources', 'SourcesController');
 	Route::get('sources/{id}/destroy',[
-		'uses' => 'sourcesController@destroy',
+		'uses' => 'SourcesController@destroy',
 		'as' => 'sources.destroy'
 		]);
 	#Genders

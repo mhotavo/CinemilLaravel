@@ -20,8 +20,8 @@
 				<td>{{ $source->id_fuente }}</td>
 				<td>{{ $source->nom_fuente }}</td>
 				<td>
-					<a href ="{{ route('sources.edit', $source->id_fuente) }}" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
-					<a href="{{ route('sources.destroy', $source->id_fuente) }}" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+					<a href ="{{ route('sources.edit', $source->id) }}" class="btn btn-warning"> <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+					<a href="{{ route('sources.destroy', $source->id) }}" class="btn btn-danger" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')"> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
 				</td>
 			</tr>
 			@endforeach

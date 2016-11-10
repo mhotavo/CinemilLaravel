@@ -98,6 +98,9 @@ class SourcesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $source = Source::find($id);
+        $source->delete();
+        flash('La fuente ' . $source->nom_fuente . ' ha sido eliminada. ', 'danger')->important();
+        return redirect()->route('sources.index');
     }
 }
